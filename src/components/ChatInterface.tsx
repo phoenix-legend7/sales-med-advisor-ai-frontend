@@ -106,7 +106,7 @@ const ChatInterface: React.FC = () => {
             </div>
           ))
         )}
-        {(isLoading || isRunning) && (
+        {isLoading && (
           <div>
             {!!currentTranscript && (
               <div
