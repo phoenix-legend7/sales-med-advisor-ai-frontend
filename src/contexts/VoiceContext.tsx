@@ -217,7 +217,6 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({
   }
   async function startConversation() {
     setError(null);
-    dispatch({ type: "reset" });
     try {
       if (!isConnected) {
         openWebSocketConnection();
@@ -289,7 +288,6 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({
     try {
       setIsLoading(true);
       if (!isConnected) {
-        dispatch({ type: "reset" });
         openWebSocketConnection();
         startAudioPlayer();
         const isConnected = await waitForWebSocket();
