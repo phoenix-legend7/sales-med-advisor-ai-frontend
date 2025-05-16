@@ -1,7 +1,7 @@
-
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Stethoscope, Heart, Brain, Activity } from 'lucide-react';
+import clsx from "clsx";
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Stethoscope, Heart, Brain, Activity } from "lucide-react";
 
 interface InfoCardProps {
   icon: React.ReactNode;
@@ -10,8 +10,18 @@ interface InfoCardProps {
   className?: string;
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({ icon, title, content, className }) => (
-  <Card className={`h-full transition-transform duration-300 hover:scale-105 ${className}`}>
+const InfoCard: React.FC<InfoCardProps> = ({
+  icon,
+  title,
+  content,
+  className,
+}) => (
+  <Card
+    className={clsx(
+      "h-full transition-transform duration-300 hover:scale-105",
+      className
+    )}
+  >
     <CardHeader className="pb-2 bg-gradient-to-r from-white to-medical-light rounded-t-lg">
       <div className="flex items-center gap-2">
         {icon}
